@@ -1,0 +1,54 @@
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int x, sumary, sumarx, a, b;
+int main()
+{
+    do {
+        cout << " MENU " << endl;
+        cout << "0.EXIT" << endl;
+        cout << " 1.SUMA DE NUMEROS  " << endl;
+        cout <<" 2.VER SI UN NUMERO ES NEGATIVO" << endl;
+        cout << " 3.FACTORIAL DE UN NUMERO" << endl;
+        cout << "escriba la opcion q desea realizar" << endl;
+        cin >> x;
+        switch (x) {
+        case 1:
+            cout << "ingrese el primer valor:";
+            cin >> sumary;
+            cout << "ingrese el segundo valor:";
+            cin >> sumarx;
+            cout << "LA SUMA ES:" << sumarx + sumary << endl;
+            break;
+        case 2:
+            cout << "ingrese el valor:";
+            cin >> a;
+            if (a > 0) {
+                cout << "es positivo" << endl;
+            }
+            else if(a==0){
+                cout << "es nulo" << endl;
+            }
+            else {
+                cout << "es negativo" << endl;
+            }
+            break;
+        case 3:
+            cout << "ingrese el numero que se va a realizar el factorial:" << endl;
+            cin >> a;
+            b = 1;
+            for (int i = 2; i <= a; i++) 
+                b = b * 1;
+            cout << "el factorial de" << a << "es" << b;
+            break;
+        default:
+            cout << "error" << endl;
+        }
+    } while (x != 0);
+
+
+
+    
+    return 0;
+}
