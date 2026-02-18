@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+
+int sumar(int a, int b);
+void sumaNumeros();
+void verificarNegativo();
+void factorialNumero();
+void opcion(int x);
+
+int main() {
+    int x;
+    bool continuar = true;
+    do {
+        cout << "--------------MENU-------------------- " << endl;
+        cout << "0. EXIT" << endl;
+        cout << "1. SUMA DE NUMEROS" << endl;
+        cout << "2. VER SI UN NUMERO ES NEGATIVO" << endl;
+        cout << "3. FACTORIAL DE UN NUMERO" << endl;
+        cout << "Escriba la opcion que desea realizar: ";
+        cin >> x;
+        if (x == 0) {
+            continuar = false;
+        } else {
+            opcion(x);
+        }
+    } while (continuar);
+    return 0;
+}
+
+int sumar(int a, int b) {
+    return a + b;
+}
+
+void sumaNumeros() {
+    int a, b;
+    cout << "Ingrese el primer valor: ";
+    cin >> a;
+    cout << "Ingrese el segundo valor: ";
+    cin >> b;
+    cout << "LA SUMA ES: " << sumar(a, b) << endl;
+}
+
+void verificarNegativo() {
+    int a;
+    cout << "Ingrese el valor: ";
+    cin >> a;
+    if (a > 0) {
+        cout << "Es positivo" << endl;
+    } else if (a == 0) {
+        cout << "Es nulo" << endl;
+    } else {
+        cout << "Es negativo" << endl;
+    }
+}
+
+void factorialNumero() {
+    int a;
+    long long b = 1;
+    cout << "Ingrese el numero para calcular el factorial: ";
+    cin >> a;
+    for (int i = 1; i <= a; i++) {
+        b *= i;
+    }
+    cout << "El factorial de " << a << " es " << b << endl;
+}
+
+void opcion(int x) {
+    switch (x) {
+        case 1: sumaNumeros(); break;
+        case 2: verificarNegativo(); break;
+        case 3: factorialNumero(); break;
+        default: cout << "Opcion invalida" << endl;
+    }
+}
